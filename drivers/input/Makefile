@@ -14,5 +14,6 @@ ifndef CONFIG_XPL_BUILD
 obj-$(CONFIG_APPLE_SPI_KEYB) += apple_spi_kbd.o
 obj-$(CONFIG_I8042_KEYB) += i8042.o
 obj-$(CONFIG_TEGRA_KEYBOARD) += input.o tegra-kbc.o
+obj-$(CONFIG_KEYBOARD_NVEC) += tegra-nvec-kbc.o
 obj-$(CONFIG_TWL4030_INPUT) += twl4030.o
 endif

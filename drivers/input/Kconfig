@@ -97,6 +97,17 @@ config I8042_KEYB
 	  variable 'keymap' to "de" to select German. Keyboard repeat is
 	  handled by the keyboard itself.
 
+config KEYBOARD_NVEC
+	bool "NVIDIA embedded controller (NVEC) keyboard, Tegra20"
+	depends on DM_KEYBOARD && DM_GPIO && TEGRA20
+	help
+	  Internal keyboard of the Toshiba AC100 (paz00). The EC is an I2C
+	  master; the Tegra I2C3 controller is polled in slave mode.
+
+config CMD_NVECDBG
+	bool "nvecdbg command to trace the NVEC bus"
+	depends on KEYBOARD_NVEC
+
 config TEGRA_KEYBOARD
 	bool "NVIDIA Tegra internal matrix keyboard controller support"
 	depends on ARCH_TEGRA
